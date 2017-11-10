@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6726AC64-8241-4B66-A728-3D6D171EC51F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Xtrf</RootNamespace>
+    <AssemblyName>Xtrf</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net46\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApiContext.cs" />
+    <Compile Include="Api\Base\XtrfError.cs" />
+    <Compile Include="Api\Base\XtrfResult.cs" />
+    <Compile Include="Api\Base\ContextBase.cs" />
+    <Compile Include="Api\Base\UploadParams.cs" />
+    <Compile Include="Api\Base\ExecuteParams.cs" />
+    <Compile Include="Api\Base\ExecuteResult.cs" />
+    <Compile Include="Api\Base\Methods.cs" />
+    <Compile Include="Api\Base\ParameterBase.cs" />
+    <Compile Include="Api\Browser\BrowserContext.cs" />
+    <Compile Include="Api\Browser\Data\Column.cs" />
+    <Compile Include="Api\Browser\Data\Header.cs" />
+    <Compile Include="Api\Browser\Data\HeaderLinks.cs" />
+    <Compile Include="Api\Browser\Data\Pagination.cs" />
+    <Compile Include="Api\Browser\Data\PaginationLinks.cs" />
+    <Compile Include="Api\Browser\Data\BrowserView.cs" />
+    <Compile Include="Api\Browser\Data\SingleRowLinks.cs" />
+    <Compile Include="Api\Browser\Data\SingleRow.cs" />
+    <Compile Include="Api\Browser\Params\BrowserParams.cs" />
+    <Compile Include="Api\Browser\Params\QueryDateType.cs" />
+    <Compile Include="Api\Browser\Params\QueryMoneyType.cs" />
+    <Compile Include="Api\Browser\Params\QueryNumberType.cs" />
+    <Compile Include="Api\Browser\Params\QueryPercentageType.cs" />
+    <Compile Include="Api\Browser\Params\QuerySelectionType.cs" />
+    <Compile Include="Api\Browser\Params\QueryTextType.cs" />
+    <Compile Include="Api\CustomerInvoices\CustomerInvoiceContext.cs" />
+    <Compile Include="Api\CustomerInvoices\Data\CustomerInvoice.cs" />
+    <Compile Include="Api\CustomerInvoices\Data\CustomerInvoiceCreate.cs" />
+    <Compile Include="Api\CustomerInvoices\Data\CustomerInvoiceCreateResult.cs" />
+    <Compile Include="Api\CustomerInvoices\Data\CustomerInvoiceDates.cs" />
+    <Compile Include="Api\CustomerInvoices\Data\InvoiceType.cs" />
+    <Compile Include="Api\CustomerInvoices\Data\PaymentTerms.cs" />
+    <Compile Include="Api\CustomerInvoices\Data\SendRemindersResponse.cs" />
+    <Compile Include="Api\CustomerInvoices\Data\SendRemindersRequest.cs" />
+    <Compile Include="Api\CustomerInvoices\Params\GetSingleParameter.cs" />
+    <Compile Include="Api\Customers\CustomerContext.cs" />
+    <Compile Include="Api\Customers\Data\AccessToken.cs" />
+    <Compile Include="Api\Customers\Data\AccessTokenRequest.cs" />
+    <Compile Include="Api\Customers\Data\Categories.cs" />
+    <Compile Include="Api\Customers\Data\Customer.cs" />
+    <Compile Include="Api\Customers\Data\CustomerAccounting.cs" />
+    <Compile Include="Api\Customers\Data\CustomerPerson.cs" />
+    <Compile Include="Api\Customers\Data\CustomerResponsiblePersons.cs" />
+    <Compile Include="Api\Customers\Data\CustomerTaxNo.cs" />
+    <Compile Include="Api\Customers\Data\Industries.cs" />
+    <Compile Include="Api\Customers\Data\PersonContact.cs" />
+    <Compile Include="Api\Customers\Params\GetWithPersonsParameter.cs" />
+    <Compile Include="Api\JobsSmart\Data\Deliverable.cs" />
+    <Compile Include="Api\JobsSmart\Data\DeliverableAddedBy.cs" />
+    <Compile Include="Api\JobsSmart\Data\DeliverableLanguageRelation.cs" />
+    <Compile Include="Api\JobsSmart\Data\Deliverables.cs" />
+    <Compile Include="Api\JobsSmart\Data\RemoteCatToolReferences.cs" />
+    <Compile Include="Api\JobsSmart\Data\Status.cs" />
+    <Compile Include="Api\JobsSmart\Data\VendorPriceProfile.cs" />
+    <Compile Include="Api\JobsSmart\JobContext.cs" />
+    <Compile Include="Api\Macro\Data\GetActionResult.cs" />
+    <Compile Include="Api\ProjectsSmart\Data\FileArchive.cs" />
+    <Compile Include="Api\ProjectsSmart\Data\FileList.cs" />
+    <Compile Include="Api\QuotesSmart\QuoteContext.cs" />
+    <Compile Include="Api\Subscription\Data\SubscriptionCreated.cs" />
+    <Compile Include="Api\Subscription\Data\SubscriptionCreate.cs" />
+    <Compile Include="Api\Subscription\Data\Subscription.cs" />
+    <Compile Include="Api\Subscription\Data\SubscriptionEvents.cs" />
+    <Compile Include="Api\Subscription\Data\Subscriptions.cs" />
+    <Compile Include="Api\Subscription\SubscriptionContext.cs" />
+    <Compile Include="Api\Macro\Data\RunMacro.cs" />
+    <Compile Include="Api\Macro\ExecuteMacroContext.cs" />
+    <Compile Include="Api\Users\Data\User.cs" />
+    <Compile Include="Common\Attribute\EnumNameAttribute.cs" />
+    <Compile Include="Common\Extention\EnumExtention.cs" />
+    <Compile Include="Core\Data\EntityWithNames.cs" />
+    <Compile Include="Core\Data\EntityWithName.cs" />
+    <Compile Include="Api\Customers\Params\GetIdsParameter.cs" />
+    <Compile Include="Api\Dictionaries\Data\Province.cs" />
+    <Compile Include="Api\Dictionaries\Data\PersonPosition.cs" />
+    <Compile Include="Api\Dictionaries\Data\PersonDepartment.cs" />
+    <Compile Include="Api\Dictionaries\Data\LeadSource.cs" />
+    <Compile Include="Api\Dictionaries\Data\LanguageSpecialization.cs" />
+    <Compile Include="Api\Dictionaries\Data\Language.cs" />
+    <Compile Include="Api\Dictionaries\Data\Industry.cs" />
+    <Compile Include="Api\Dictionaries\Data\Currency.cs" />
+    <Compile Include="Api\Dictionaries\Data\DictionaryDataBase.cs" />
+    <Compile Include="Api\Dictionaries\Data\Country.cs" />
+    <Compile Include="Api\Dictionaries\Data\Category.cs" />
+    <Compile Include="Api\JobsSmart\Data\Documents.cs" />
+    <Compile Include="Api\JobsSmart\Data\Files.cs" />
+    <Compile Include="Api\JobsSmart\Data\Dates.cs" />
+    <Compile Include="Api\JobsSmart\Data\Communication.cs" />
+    <Compile Include="Api\JobsSmart\Data\Language.cs" />
+    <Compile Include="Api\JobsSmart\Data\StepType.cs" />
+    <Compile Include="Api\JobsSmart\Data\Semantics.cs" />
+    <Compile Include="Api\ProjectsSmart\Data\BodyPart.cs" />
+    <Compile Include="Api\Dictionaries\Data\ManyValuesPerType.cs" />
+    <Compile Include="Api\Dictionaries\DictionaryContext.cs" />
+    <Compile Include="Api\Services\Data\Service.cs" />
+    <Compile Include="Api\Services\Data\Services.cs" />
+    <Compile Include="Api\Services\Params\GetParameter.cs" />
+    <Compile Include="Api\Services\ServicesContext.cs" />
+    <Compile Include="Api\Users\UserContext.cs" />
+    <Compile Include="Core\Data\DocumentUrl.cs" />
+    <Compile Include="Core\Data\FilesDto.cs" />
+    <Compile Include="Core\Data\Time.cs" />
+    <Compile Include="Core\Data\Address.cs" />
+    <Compile Include="Api\Vendors\Data\Competencies.cs" />
+    <Compile Include="Core\Data\Contact.cs" />
+    <Compile Include="Core\Data\CustomerContactEmails.cs" />
+    <Compile Include="Api\Vendors\Data\Provider.cs" />
+    <Compile Include="Api\Vendors\Params\GetSingleParameter.cs" />
+    <Compile Include="Core\Data\Gender.cs" />
+    <Compile Include="Core\Data\EmptyHolder.cs" />
+    <Compile Include="Core\Dictionary\JobStatus.cs" />
+    <Compile Include="Core\Dictionary\Category.cs" />
+    <Compile Include="Core\Params\UpdatedSinceParameter.cs" />
+    <Compile Include="Api\Vendors\VendorContext.cs" />
+    <Compile Include="Core\Data\SingleValueLong.cs" />
+    <Compile Include="Core\Data\SingleValue.cs" />
+    <Compile Include="Core\Data\CustomField.cs" />
+    <Compile Include="Api\ProjectsSmart\Data\LanguageRelation.cs" />
+    <Compile Include="Api\JobsSmart\Data\Job.cs" />
+    <Compile Include="Api\JobsSmart\Data\Jobs.cs" />
+    <Compile Include="Api\ProjectsSmart\Data\ProjectFiles.cs" />
+    <Compile Include="Api\ProjectsSmart\Data\RemoteCatToolReferences.cs" />
+    <Compile Include="Api\ProjectsSmart\Data\MultiPart.cs" />
+    <Compile Include="Api\ProjectsSmart\Data\MediaType.cs" />
+    <Compile Include="Api\ProjectsSmart\Data\ContentDisposition.cs" />
+    <Compile Include="Api\ProjectsSmart\Data\FormDataMultiPart.cs" />
+    <Compile Include="Api\ProjectsSmart\Data\FileCategorizations.cs" />
+    <Compile Include="Api\ProjectsSmart\Data\ProjectFile.cs" />
+    <Compile Include="Api\ProjectsSmart\Data\ProjectFileAddedBy.cs" />
+    <Compile Include="Core\Data\Providers.cs" />
+    <Compile Include="Api\ProjectsSmart\Data\SmartContacts.cs" />
+    <Compile Include="Api\ProjectsSmart\Data\Contacts.cs" />
+    <Compile Include="Api\ProjectsSmart\Data\Documents.cs" />
+    <Compile Include="Api\ProjectsSmart\Data\FileCategorization.cs" />
+    <Compile Include="Core\Data\LanguageCombination.cs" />
+    <Compile Include="Api\ProjectsSmart\Data\ProjectStatus.cs" />
+    <Compile Include="Api\ProjectsSmart\Data\Finance.cs" />
+    <Compile Include="Core\Data\CustomFields.cs" />
+    <Compile Include="Api\ProjectsSmart\Data\Specialization.cs" />
+    <Compile Include="Api\ProjectsSmart\Data\File.cs" />
+    <Compile Include="Api\ProjectsSmart\Data\TargetLanguages.cs" />
+    <Compile Include="Api\ProjectsSmart\Data\SourceLanguage.cs" />
+    <Compile Include="Api\ProjectsSmart\Data\Time.cs" />
+    <Compile Include="Api\ProjectsSmart\Data\Volume.cs" />
+    <Compile Include="Api\ProjectsSmart\Data\Project.cs" />
+    <Compile Include="Api\ProjectsSmart\Data\ProjectCreate.cs" />
+    <Compile Include="Api\ProjectsSmart\Data\People.cs" />
+    <Compile Include="Api\ProjectsSmart\Data\ProjectLanguages.cs" />
+    <Compile Include="Api\ProjectsSmart\ProjectContext.cs" />
+    <Compile Include="Core\Data\ParameterizedHeader.cs" />
+    <Compile Include="Error\ErrorLogger.cs" />
+    <Compile Include="Helper\DoubleExtension.cs" />
+    <Compile Include="Helper\UnixTimeHelper.cs" />
+    <Compile Include="Interface\IBrowserView.cs" />
+    <Compile Include="Interface\IConnection.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Api\Dictionaries\Params\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <Target Name="SpicNSpan" AfterTargets="Clean">
+    <RemoveDir Directories="$(OUTDIR)" />
+  </Target>
+</Project>
