@@ -25,6 +25,16 @@ The RootUrl consists of your own XTRF url + /api
 
 ## Using the API
 Calling an API function goes by using the `ApiContext` that can be called through `Xtrf.ApiContext.Instance`. After that, you should be able to figure it out yourself.
+```
+// retrieve a single project
+var projectInternalId = "KVVV32T34ZC65LB5MXQ3GSFFUY";
+var xtrfApi = Xtrf.ApiContext.Instance;
+var xtrfProjectResult = await xtrfApi.Project.Get(projectInternalId);
+if(xtrfProjectResult.Success)
+   Console.Log(xtrfProjectResult.Result.Name);
+else
+   Console.Log("Error on XTRF API: " + xtrfProjectResult.ErrorMessage);
+```
 
 ### Macro execute
 Added feature: executing macros from your code. 
