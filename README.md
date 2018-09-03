@@ -3,7 +3,7 @@ This .NET wrapper for the XTRFT Home Portal API can be used to easily connect to
 API URL: https://simplytranslate.s.xtrf.eu/api/doc/users/introduction.html
 
 ## Using the Wrapper
-Start of by creating your own implementation of `Xtrf.Instance.IConnection` and add this to the static `XtrfConnection`. 
+Start of by creating your own implementation of `Xtrf.Interface.IConnection` and add this to the static `XtrfConnection`. 
 You can also specify your custom errorlogging.
 
 Should look something like this:
